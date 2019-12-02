@@ -1,0 +1,24 @@
+<div class="page-header">
+    <h1>{{group_title|title}}</h1>
+</div>
+<div class=" row">
+
+    {% for obj in member_list %}
+    
+    <div class="  center col s12 m3 ob">
+        <div class="card">
+            <a href="{% url 'movie_detail' obj.id %}">
+            <div class="card-image">
+                <img src="{{obj.movie_logo}}"" class=" card-img-top" height="300" alt="{{obj.title}}">
+            </div>
+            <div class="card-content">
+                <span class="card-title">
+                    {{obj.title}}
+                </span>
+            </div>
+        </a>
+        </div>
+    </div>
+
+        {% endfor %}
+</div>

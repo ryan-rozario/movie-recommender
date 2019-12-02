@@ -1,0 +1,75 @@
+{% extends 'movies/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>{{m.title}}</h1>
+    </div>
+    <div class="row center">
+        <img src="{{m.movie_logo}}"" class=" card-img-top" height="600" alt="{{m.title}}">
+    </div>
+    <div class="container">
+        <div class="row">
+            <h4>Actor</h4>
+        </div>
+        {% for obj in a %}
+        <div class="row">{{obj.name}}</div>
+        {% endfor %}
+        <div class="row">
+            <h4>Director</h4>
+        </div>
+        {% for obj in d %}
+        <div class="row">{{obj.name}}</div>
+        {% endfor %}
+        <div class="row">
+            <h4>Writer</h4>
+        </div>
+        {% for obj in w %}
+        <div class="row">{{obj.name}}</div>
+        {% endfor %}
+    </div>
+
+    <div>
+
+
+    <h3>Enter Your Rating</h3>
+        <form method="POST" action="">{% csrf_token %}
+            <p>Current Rating:  {{r.rating}}</p>
+            <p>
+                <label>
+                    <input name="group1" type="radio" value="1" />
+                    <span>1</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input name="group1" type="radio" value="2" />
+                    <span>2</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input name="group1" type="radio" value="3" />
+                    <span>3</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input name="group1" type="radio" value="4"/>
+                    <span>4</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input name="group1" type="radio" value="5"  />
+                    <span>5</span>
+                </label>
+            </p>
+            <div class="">
+                    <input type="submit" value="Rate" class="login100-form-btn"/>
+            </div>
+        </form>
+    </div>
+
+
+</div>
+{% endblock %}

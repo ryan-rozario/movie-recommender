@@ -1,0 +1,8 @@
+{% extends 'movies/base.html' %}
+{% block content %}
+<div class="container">
+
+    {% include "movies/group.html" with group_title=title member_list=mov_all only %}
+
+</div>
+{% endblock %}

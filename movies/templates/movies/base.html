@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+  <title>Movie Recommender</title>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="{% static "movies/materialize/css/materialize.min.css" %}"
+    media="screen,projection" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    .ob {
+        max-height: 400px;
+        margin-bottom: 20px;
+        margin-top: 30px
+    }
+    
+    #everything {
+      padding-left: 300px;
+    }
+
+    #content11 {
+      padding: 20px;
+    }
+
+    @media only screen and (max-width : 992px) {
+      #everything {
+        padding-left: 0px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="everything">
+
+      <nav>
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Movie Recommender</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a class="waves-effect waves-light btn" href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+          </div>
+        </nav>
+
+
+    <div id="menu">
+
+        
+
+      <ul id="slide-out" class="sidenav sidenav-fixed">
+        <li><a href="{% url 'recom' %}">Recommended</a></li>
+        <li><a href="{% url 'total' %}">All Genres</a></li>
+        <li><a href="{% url 'genre' 'action' %}">Action</a></li>
+        <li><a href="{% url 'genre' 'adventure' %}">Adventure</a></li>
+        <li><a href="{% url 'genre' 'animation' %}">Animation</a></li>
+        <li><a href="{% url 'genre' 'children' %}">Children</a></li>
+        <li><a href="{% url 'genre' 'comedy' %}">Comedy</a></li>
+        <li><a href="{% url 'genre' 'crime' %}">Crime</a></li>
+        <li><a href="{% url 'genre' 'documentary' %}">Documentary</a></li>
+        <li><a href="{% url 'genre' 'drama' %}">Drama</a></li>
+        <li><a href="{% url 'genre' 'fantasy' %}">Fantasy</a></li>
+        <li><a href="{% url 'genre' 'film_noir' %}">Film-Noir</a></li>
+        <li><a href="{% url 'genre' 'horror' %}">Horror</a></li>
+        <li><a href="{% url 'genre' 'musical' %}">Musical</a></li>
+        <li><a href="{% url 'genre' 'mystrey' %}">Mystrey</a></li>
+        <li><a href="{% url 'genre' 'romance' %}">Romance</a></li>
+        <li><a href="{% url 'genre' 'scifi' %}">Sci-Fi</a></li>
+        <li><a href="{% url 'genre' 'thriller' %}">Thriller</a></li>
+        <li><a href="{% url 'genre' 'war' %}">War</a></li>
+        <li><a href="{% url 'genre' 'western' %}">Western</a></li>
+      </ul>
+    </div>
+
+    <div id="content11">
+
+      {% block content %}
+      <div class="container">
+        <h3>Basic Navbar Example</h3>
+        <p>A navigation bar is a navigation header that is placed at the top of the page.</p>
+      </div>
+      {% endblock %}
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="{% static "movies/materialize/js/materialize.min.js" %}"></script>
+<script>
+  
+
+</script>
+
+</html>
